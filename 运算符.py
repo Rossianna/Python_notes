@@ -21,7 +21,6 @@ result = 1 is not True # True, 1的id和True的id不一样
 # not 逻辑非
 # and 逻辑与
 # or 逻辑或
-
 a = 2
 a = not a
 print(a) # 输出False，所以可以认为，Python中，对于非零的数取not，都会得到False
@@ -38,8 +37,36 @@ print(a) # 输出False，所以可以认为，Python中，对于非零的数取n
 #    注意，or也是“短路”的
 
 
-
-
-
 # 非布尔值的与或运算
-# 
+# 当我们对非布尔值进行与或运算时，Python会将其当做布尔值运算，最终返回原值
+# 与运算：如果第一个值是False，则返回第一个值，否则返回第二个值
+# 或运算：如果第一个值是True，则返回第一个值，否则返回第二个值  
+result = 1 and 0 # 0
+
+# 逻辑运算符可以连用
+result = 1 < 2 < 3 # True,相当于2 > 1 且 2 < 3
+result = 10 < 20 > 15 # True,相当于20 >10 且 20 > 15
+
+
+
+# 条件运算符（三元运算符）
+# 语法：语句1 if 条件表达式 else 语句2
+#     条件运算符在执行时，会先对条件表达式进行求值判断，如果判断结果为True，则执行语句1并返回执行结果
+#                                                  如果判断结果为False，则执行语句2，并返回执行结果
+
+# 通过条件运算符获取三个值中的最大值
+a = 10
+b = 20 
+c = 30 # a,b,c随便取
+# 方法1：
+max = a if a > b else b
+max = max if max > c else c
+# 方法2：
+max = a if (a > b and a >c) else (b if b > c else c)
+print(max)
+
+
+
+# 运算符的优先级
+# ！and的优先级高于or
+# 用括号改变优先级
