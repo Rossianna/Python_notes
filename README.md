@@ -1,2 +1,2 @@
 # Python_notes
-some points you need to remember during python study
+python学习的知识点整理
